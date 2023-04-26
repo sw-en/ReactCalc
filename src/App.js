@@ -12,12 +12,19 @@ const buttonValues =
 [7, 8, 9, "*"],
 [4, 5, 6, "+"],
 [1, 2, 3, "-"],
-[0, ".", "="],
+[".", 0, "="],
 ];
 
 
-const methods = ["*","-","+","/"];
+const methods = ["*","-","+","/","c","ce","%"];
 
+
+/*
+function handleScreen(){
+
+  return expression
+}
+*/
 
 
 function App() {
@@ -33,12 +40,12 @@ function App() {
               <Button
                 key={i}
                 className={btn === "=" ? "equals" : methods.includes(btn) ? "methods" : ""} 
-                //className={btn === "=" ? "equals" : btn in ["*","-","+","/"] ? "methods" : ""}
-                //className={btn === "=" ? "equals" : btn === "*"||"-"||"+"||"/" ? "methods" : ""}
                 value={btn}
                 onClick={() => {
                   console.log(`${btn} clicked`);
+                   
                 }}
+                //include an on click that sends the value of a button to the display
               />
             );
           })
